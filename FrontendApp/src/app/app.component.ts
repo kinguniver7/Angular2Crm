@@ -6,12 +6,15 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'app works!';
+  title = 'App!';
   name: string = "test";
 
   addItem(t1, t2): string {
-    console.log(t2);
+    console.log("addItem", t1);
     return t1;
+  }
+  onChanged(increased) {
+    console.log("App", increased);
   }
 
 }

@@ -1,0 +1,14 @@
+<input [(ngModel)]="name" />
+
+<input type="checkbox" [(ngModel)]="isActive" />
+<div [ngClass]="{active:isActive}">
+  asdsada
+  asdasdasd
+  asdasda
+</div>
+<br />
+<p [class.active2]="isActive">
+  aaaaaaaaaadasdas sadasdasd sad
+</p>
+<button (click)="changeActive()">Change</button>
+
