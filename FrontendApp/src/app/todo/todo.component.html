@@ -1,14 +1,22 @@
-<input [(ngModel)]="name" />
-
+﻿<input [(ngModel)]="name" />
+<p *ngIf="isActive">Hello World!</p>
+<p *ngIf="!isActive">Goodbay World!</p>
 <input type="checkbox" [(ngModel)]="isActive" />
-<div [ngClass]="{active:isActive}">
-  asdsada
-  asdasdasd
-  asdasda
-</div>
-<br />
-<p [class.active2]="isActive">
-  aaaaaaaaaadasdas sadasdasd sad
-</p>
+
+
 <button (click)="changeActive()">Change</button>
+
+<hr />
+<table>
+  <thead>
+    <tr *ngIf="isLoad">
+      <td>Loading...</td>
+    </tr>
+  </thead>
+  <tbody  *ngIf="!isLoad">
+    <tr *ngFor="let item of items">
+      <td>{{item}}</td>
+    </tr>
+  </tbody>
+</table>
 

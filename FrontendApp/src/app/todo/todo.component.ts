@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+﻿import { Component, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-todo',
@@ -8,13 +8,32 @@ import { Component, OnInit} from '@angular/core';
 export class TodoComponent implements OnInit {
   name: string;
   isActive: boolean = false;
-  constructor() { }
+  isLoad: boolean = false;
+
+
+  items: Array<string>;
+
+  constructor() {
+    
+  }
+  refresh(): void {
+    this.isLoad = true;
+    setTimeout(() => {
+      this.active();
+    }, 3000);
+  }
+  active():void{
+    this.items = ["Apple iPhone 7", "Huawei Mate 9", "Samsung Galaxy S7", "Motorola Moto Z"];
+    this.isLoad = false;
+  }
 
   ngOnInit() {
     console.log("init");
+    this.refresh();
   }
 
   changeActive(): void {
     this.isActive = !this.isActive;
+    this.refresh();
   }
 }
